@@ -1,0 +1,16 @@
+# Arquivos gerados automaticamente pelo Jupyter
+.ipynb_checkpoints/
+
+# Dados temporários e cache do Jupyter
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Configurações locais do Jupyter
+.jupyter/
+.jupyterlab/
+.lab/
+
+# Arquivos específicos do VSCode (se estiver usando)
+.vscode/
