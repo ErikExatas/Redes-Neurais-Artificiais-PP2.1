@@ -37,10 +37,6 @@ jupyter notebook
 
 ## To Do
 
-2. Resolvendo um Problema Linearmente Separável
-3. Experimentação
-4. Validação Holdout em Problema Não-Linearmente Separável
-
 ### 1. Preparação do Ambiente
 - [x] Obter o id e os dados que serão usados como entrada (`matriculas % 4`);
 - [x] Estruturar a base do repositório no GitHub;
