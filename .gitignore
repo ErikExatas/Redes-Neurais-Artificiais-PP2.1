@@ -14,3 +14,7 @@ __pycache__/
 
 # Arquivos específicos do VSCode (se estiver usando)
 .vscode/
+
+# Conda environment
+.env/
+.conda/
