@@ -63,7 +63,16 @@ jupyter notebook
 ---
 
 ### 3. Experimentação
-...
+- [ ] Utilizar o arquivo correspondente ao identificador da equipe (`data3.txt`);
+- [ ] Executar, por 10 repetições, o algoritmo da primeira parte para as seguintes configurações:
+  - η x I = {0.4, 0.1, 0.01} x {(-100, +100), (-0.5, +0.5)}, em que I é o intervalo a ser utilizado para a distribução uniforme dos pesos;
+  - No total serão 6 configurações a serem testadas, por 10 repetições;
+- [ ] Para cada configurações em cada execução, obter:
+  - [ ] Média do número de ajustes;
+  - [ ] Desvio padrão do número de ajustes;
+  - [ ] Número de épocas até a convergência
+- [ ] Dispor os resultados em uma tabela e avaliar a qualidade das configurações
+  
 
 ---
 
