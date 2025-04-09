@@ -33,7 +33,7 @@ class Perceptron:
 
         return self.__f(np.dot(self._weights, input_data))
 
-    def train(self, X: np.ndarray, labels: np.ndarray ,learning_rate: float, max_epochs: int = 1000) -> int:
+    def train(self, X: np.ndarray, labels: np.ndarray ,learning_rate: float, max_epochs: int = 1000) -> tuple[int, int]:
         """Treina o perceptron.
 
         Parâmetros:
@@ -44,6 +44,7 @@ class Perceptron:
 
         Retorna:
         int: Época em que convergiu, ou -1 se não convergir.
+        int: Número de ajustes feitos.
         """
         assert isinstance(X, np.ndarray) and X.ndim == 2, "`X` deve ser uma matriz 2D do tipo `np.ndarray`."
         assert X.shape[1] == self._input_size, f"Esperado {self._input_size} features por amostra, mas recebeu {X.shape[1]}."
@@ -55,17 +56,22 @@ class Perceptron:
         assert isinstance(learning_rate, (int, float)) and learning_rate > 0, "`learning_rate` deve ser um número positivo."
         assert isinstance(max_epochs, int) and max_epochs > 0, "`max_epochs` deve ser um inteiro positivo."
 
+        adjustment_counter = 0
+        
         for i in range(max_epochs):
             predictions = self._batch_predict(X)
             errors = labels.ravel() - predictions
 
             if np.count_nonzero(errors) == 0:
-                return i + 1
+                return i + 1, adjustment_counter
+            else:
+                # Número de erros é igual ao número de ajustes que devem ser feitos
+                adjustment_counter += np.count_nonzero(errors)
 
             # w <- w + η . X^T . (y_truth - y_pred)
             self._weights += learning_rate * (self._add_bias(X).T @ errors)
 
-        return -1
+        return -1, adjustment_counter
 
     def _batch_predict(self, X: np.ndarray) -> np.ndarray:
         return (self._add_bias(X) @ self._weights >= 0).astype(int)
