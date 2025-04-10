@@ -77,4 +77,12 @@ jupyter notebook
 ---
 
 ### 4. Validação Holdout em Problema Não-Linearmente Separável
-...
+- [x] Utilizar o arquivo `dataHoldout.txt` como base;
+- [x] Mostrar o  gráfico inicial que evidencie que este problema não é linearmente separável;
+- [x] Separar os exemplos aleatoriamente em duas partições: 70% treino e 30% teste;
+- [x] Executar o algoritmo por 100 épocas, apresentando os exemplos a cada época;
+- [ ] Ao efetuar a previsão da saída:
+  - [ ] Apresentar matriz de confusão;
+  - [ ] Imprimir a acurácia;
+  - [ ] Obter os valores de precisão, revocação e F-Score;
+  - [ ] Analisar a qualidade da solução perante o conjunto de testes
