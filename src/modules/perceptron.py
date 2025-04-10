@@ -31,7 +31,7 @@ class Perceptron:
         assert input_data.ndim == 1, "`input_data` deve ser um vetor 1D."
         assert input_data.shape[0] == self._input_size, f"Esperado vetor de {self._input_size} features, mas recebeu {input_data.shape[0]}."
 
-        return self.__f(np.dot(self._weights, input_data))
+        return self.__f(np.dot(self._weights, np.insert(input_data, 0, 1.0)))
 
     def train(self, X: np.ndarray, labels: np.ndarray ,learning_rate: float, max_epochs: int = 1000) -> tuple[int, int]:
         """Treina o perceptron.
