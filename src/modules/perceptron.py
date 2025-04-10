@@ -70,7 +70,6 @@ class Perceptron:
 
             # w <- w + η . X^T . (y_truth - y_pred)
             self._weights += learning_rate * (self._add_bias(X).T @ errors)
-
         return -1, adjustment_counter
 
     def _batch_predict(self, X: np.ndarray) -> np.ndarray:
